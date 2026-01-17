@@ -28,7 +28,7 @@ logger.setLevel(logging.INFO)
 
 # 创建一个TimedRotatingFileHandler来进行日志轮转
 handler = TimedRotatingFileHandler(
-    filename='/tmp/aktools_log.log' if os.getenv('VERCEL') == '1' else 'aktools_log.log',
+    filename='/tmp/aktools_log.log' if os.getenv('VERCEL') == '1' else '/tmp/aktools_log.log',
         when='midnight', interval=1, backupCount=7, encoding='utf-8'
 )
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
